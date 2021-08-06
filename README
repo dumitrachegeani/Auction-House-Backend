@@ -1,0 +1,29 @@
+Am folosit lucruri din java 13-14-15 (nu mai stiu exact care din care versiune)
+switch expressions
+sealed classes
+(am incercat si recorduri dar nu prea aveam unde)
+
+streamuri multe (java 8)
+
+
+Design Pattern:
+    Single tone pe CasaLicitiatie
+    Factory pentru produse
+    Broker pattern clasa broker
+    Commander pentru threadul de adaugaProduse
+    Producer- Consumer pe lista de produse (Licitatie - Administrator)
+
+Programul incepe citind din fisiere csv produsele, brokerii si clientii si atribuindu-le casei de licitatii
+    folosing clasele din pachetul Csv (personal)
+Cumpara este metoda ce activeaza tot procesul. Aceasta trimite informatia catre casadelicitatii si casa de licitatii ii atribuie un broker
+    dupa aceasta adauga brokerul la licitatia pentru produsul respectiv si daca s-a ajuns la nrMaximParticipanti proneste
+    un thread in care se liciteaa pentru produs si in caz
+    ca se cumpara se scoate din lista sincronizata
+
+
+Am implementat toate principiile (de data asta) programarii oriientate pe obiect (sper)
+Am folosit multithreading, lista sincronizata de produse.
+Am folosit genericitate <? extends Produs>
+Am implementat 10 unit teste
+Am implementat 10 teste aflate in main si rulabile impreuna/separat
+Am implementat interfete claselor (abstractizare) - Serializable
